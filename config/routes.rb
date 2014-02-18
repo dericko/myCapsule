@@ -1,4 +1,18 @@
 MyCapsule::Application.routes.draw do
+  get "notes/index"
+  get "notes/new"
+  get "notes/edit"
+  get "notes/show"
+  get "users/new"
+  get "users/index"
+  get "users/edit"
+  get "users/delete"
+  get "home/index"
+
+  root 'home#index'
+
+  resources :users
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
