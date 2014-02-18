@@ -1,6 +1,11 @@
 <h1>I'm a little Notes#index page</h1>
 <p>Find me in app/views/notes/index.html.erb</p>
 
+<br>
+<%= link_to "Home", root_path %>
+<%= link_to "Add Note", new_note_path %>
+<br>
+
 <table>
 	<tr>
 		<td>title</td>
@@ -13,7 +18,7 @@
 		<td><%= note.title %></td>
 		<td><%= note.body %></td>
 		<td><%= note.timer %></td>
-		<td><%= note.user.name %></td>
+		<td><%= note.user_id %></td>
 	</tr>
 	<% end %>
 </table>

@@ -1,7 +1,32 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Derick Olson
+CIS196
+
+Heroku: 
+
+--------
+HW 4 (Created databases for User and Note, with add and index)
+--------
+Had problem with displaying username in Note#index (this is the linked data type). Other than that, everything seems to work. Plan to get some styling done this week.
+
+I have one field in the Note database, "timer" that I want to hold a number (this time-capsule app will eventually restrict users from reading their notes until the timer runs out). I also have a "maketime" item that is a 'timestamp' type, but do not know how to include it.
+
+
+--------
+App Summary (from HW2)
+--------
+
+1) MyCapsule
+
+A more interactive journal, that uses time to let users interact with themselves. 
+
+--> Create a capsule: Ask yourself anything, congratulate yourself on something great, remind yourself to appreciate this moment, tell yourself not to make that mistake again, tell yourself a joke, tell yourself that everything will be okay, inspire yourself. Every day we have the chance to recreate ourselves. Record what you're thinking, what you value, or what you hope for in the future. Set a time or a situation to open it, and submit. You can check your inbox to see your waiting and ready messages. Options to share, to come.
+
+
+--------
+To add later on:
+--------
 
 Things you may want to cover:
 

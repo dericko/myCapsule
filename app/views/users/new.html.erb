@@ -1,6 +1,10 @@
 <h1>I'm a plain old Users#new page</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
+<br>
+<%= link_to "Home", root_path %>
+<%= link_to "Users", users_path %>
+<br>
 
 <%= form_for(@user) do |f| %>
 	
