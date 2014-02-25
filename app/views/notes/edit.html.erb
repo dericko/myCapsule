@@ -1,2 +1,32 @@
-<h1>Notes#edit</h1>
+<h1>Edit Note</h1>
 <p>Find me in app/views/notes/edit.html.erb</p>
+
+<%= form_for(@note) do |f| %>
+	
+	<div class="field" %>
+		<p>title</p>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="field">
+		<p>body</p>
+		<%= f.text_area :body %>
+	</div>
+
+	<div class="field">
+		<p>user</p>
+		<%= f.collection_select :user_id, User.all, :id, :name %>
+	</div>
+
+	<!-- Unsure about 'maketime' field for timestamp, should not be manually aded -->
+
+	<div class="field">
+		<p>timer</p>
+		<%= f.text_field :timer %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>

@@ -3,7 +3,12 @@
 Derick Olson
 CIS196
 
-Heroku: 
+Heroku: http://sheltered-crag-2332.herokuapp.com/
+
+--------
+HW 5 (Added show/edit/delete to user pages)
+--------
+Note list now displays the user's name (not ID). Added functionality to User and Note models. View, edit, delete all seem to work fine for both.
 
 --------
 HW 4 (Created databases for User and Note, with add and index)

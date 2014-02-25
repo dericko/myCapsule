@@ -3,12 +3,15 @@ MyCapsule::Application.routes.draw do
   get "notes/new"
   get "notes/edit"
   get "notes/show"
+  get "notes/delete"
+
   get "users/new"
   get "users/index"
   get "users/edit"
   get "users/delete"
-  get "home/index"
+  get "users/show"
 
+  get "home/index"
   root 'home#index'
 
   resources :users
