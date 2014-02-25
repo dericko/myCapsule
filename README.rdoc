@@ -4,14 +4,13 @@ Derick Olson
 CIS196
 
 Heroku: http://sheltered-crag-2332.herokuapp.com/
-<<<<<<< HEAD
 
 --------
 HW 5 (Added show/edit/delete to user pages)
 --------
 Note list now displays the user's name (not ID). Added functionality to User and Note models. View, edit, delete all seem to work fine for both.
-=======
->>>>>>> 32efe5cf7dacc50a7128547f5c596de2137b47af
+
+*Issue on heroku--delete just links to the show page. On 'rails server' it deletes just fine. 
 
 --------
 HW 4 (Created databases for User and Note, with add and index)
