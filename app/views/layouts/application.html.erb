@@ -7,8 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+<header>
+	<div class="title">
+		<h1>MyCapsule</h1>
+	</div>
+
+	<nav class="nav-links">
+		<%= link_to "Add User", new_user_path %>
+		<%= link_to "View Users", users_path %>
+		<%= link_to "Add Note", new_note_path %>
+		<%= link_to "View Notes", notes_path %>
+	</nav>
+
+</header>
 
 <%= yield %>
+
+<center>
+	<footer>
+		<p>Derick Olson | CIS196 | 2014</p>
+	</footer>
+</center>
+
 
 </body>
 </html>
