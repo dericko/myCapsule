@@ -5,6 +5,13 @@ CIS196
 
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
+
+--------
+HW 6 (Added a gem)
+--------
+Added gem Devise to app
+
+
 --------
 HW 5 (Added show/edit/delete to user pages)
 --------
