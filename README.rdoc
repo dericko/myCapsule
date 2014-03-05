@@ -11,6 +11,18 @@ HW 6 (Added a gem)
 --------
 Added gem Devise to app
 
+Problems:
+I've spent several hours unsuccsessfully troubleshooting an error with 'heroku rake db:migrate' (see below). I think it has to do with email already existing in my User model, and devise tryng to add another. The fix from the tutorial worked locally (totally functional on localhost), but I can't figure it out for Heroku. As a result, log-in pages do not work on Heroku. I'll try to come to office hours this week to try and fix the problem.
+
+ERROR MESSAGE (on $heroku run rake db:migrate):
+"
+rake aborted!
+An error has occurred, this and all later migrations canceled:
+
+PG::UniqueViolation: ERROR:  could not create unique index "index_users_on_email"
+DETAIL:  Key (email)=() is duplicated.
+: CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")/app/vendor/bundle/ruby/2.0.0/gems/activerecord-4.0.2/lib/active_record/connection_adapters/postgresql/database_statements.rb:128:in `async_exec'
+"
 
 --------
 HW 5 (Added show/edit/delete to user pages)
