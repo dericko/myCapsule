@@ -12,31 +12,90 @@
  *= require_tree .
  */
 
+// General Styling
+
 body {
 	background-color: #fff;
-	font-family: "Open Sans", sans-serif;
+	font-family: "Helvetica", sans-serif;
 	height: 100%;
 }
 
+ul {
+	list-style-type: none;
+}
 
-h1 {
-	font-size: 40px;
-	font-family: "Helvetica", sans-serif;
+li {
+	display: inline;
+}
+
+li a {
+	text-decoration: none;
+	color: gray;
+	cursor: default;
+}
+
+a:hover {
+	text-decoration: underline;
+	cursor: default;
+}
+
+// Header
+
+
+header {
+	width: 100%;
+}
+
+nav {
+	height: 60px;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+
+nav section {
+	display: inline;
+}
+
+.navbar-left {
+	float: left;
+}
+
+#title {
+	font-size: 25px;
 	font-weight: normal;
-	text-align: center;
+	margin: 0;
+	padding: 0;
 }
 
-h2 {
-	font-size: 15px;
-	margin-bottom: 20px;
+.navbar-left li a:hover {
+	text-decoration: none;
+	cursor: default;
 }
 
-footer p {
+.navbar-right {
+	float: right;
+	text-align: right;
+	padding-right: 30px;
+}
+
+nav ul li a {
+	padding-left: 15px;
+}
+
+
+//Footer
+
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
+footer section p {
+	height: 20px;
+	width: 100%;
 	color: gray;
 	font-size: 12px;
 	margin: 30px;
-}
-
-footer {
-	margin-top: 150px;
+	position: absolute;
+	bottom: 0;
 }

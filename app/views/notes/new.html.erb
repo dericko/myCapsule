@@ -1,26 +1,25 @@
-<h2>New User</h2>
+<h2>New</h2>
 
 <%= form_for(@note) do |f| %>
 	
 	<div class="field" %>
-		<p>title</p>
+		<p>Title</p>
 		<%= f.text_field :title %>
 	</div>
 
 	<div class="field">
-		<p>body</p>
+		<p>Body</p>
 		<%= f.text_area :body %>
 	</div>
 
 	<div class="field">
-		<p>user</p>
-		<%= f.collection_select :user_id, User.all, :id, :name %>
+		<%= f.hidden_field :user_id, :value => current_user.id %>
 	</div>
 
 	<!-- Unsure about 'maketime' field for timestamp, should not be manually aded -->
 
 	<div class="field">
-		<p>timer</p>
+		<p>Timer</p>
 		<%= f.text_field :timer %>
 	</div>
 

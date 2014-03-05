@@ -9,26 +9,52 @@
 <body>
 	
 <header>
-	<div class="title">
-		<h1>MyCapsule</h1>
-	</div>
 
-	<nav class="nav-links">
-		<%= link_to "Add User", new_user_path %>
-		<%= link_to "View Users", users_path %>
-		<%= link_to "Add Note", new_note_path %>
-		<%= link_to "View Notes", notes_path %>
+	<nav class="navbar">
+		<section class="navbar-left">
+			<ul>
+			<li id="title">
+				<%= link_to('MyCapsule', root_path) %>
+			</li>
+			</ul>
+		</section>	
+
+		<section class="navbar-right">
+			<ul>
+			<li>
+				<%= link_to "Add Note", new_note_path %>
+			</li>
+			<li>
+				<%= link_to "Notes", notes_path %>			
+			</li>
+		<% if user_signed_in? %>
+			<li>
+				<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+			</li>
+		<% else %>
+			<li>
+				<%= link_to('Login', new_user_session_path) %>
+			</li>
+		<% end %>
+			</ul>	
+		</section>
 	</nav>
 
 </header>
 
+
+<!-- Notifications and alerts from devise -->
+<p class="notice"> <%= notice %> </p>
+<p class="alert"> <%= alert %> </p>
+
 <%= yield %>
 
-<center>
-	<footer>
+<footer>
+
+	<section class="footer-mid">
 		<p>Derick Olson | CIS196 | 2014</p>
-	</footer>
-</center>
+	</section>
+</footer>
 
 
 </body>

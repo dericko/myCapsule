@@ -4,28 +4,40 @@ class NotesController < ApplicationController
   end
 
   def new
-  	@note = Note.new
+    if user_signed_in?
+      @note = Note.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @note = Note.new(note_params)
-    if @note.save
-      redirect_to notes_path
+    if @note.user_id != current_user.id
+      redirect_to root_path
     else
-      render 'new'
+      if @note.save
+        redirect_to notes_path
+      else
+        render 'new'
+      end
     end
   end
 
-  def edit
-    @note = Note.find(params[:id])
-  end
+    def edit
+      @note = Note.find(params[:id])
+    end
 
   def update
     @note = Note.find(params[:id])
-    if @note.update_attributes(note_params)
-      redirect_to notes_path(@note_id)
-    else
+    if @note.user_id != current_user.id
       render 'edit'
+    else
+      if @note.update_attributes(note_params)
+        redirect_to notes_path(@note_id)
+      else
+        render 'edit'
+      end
     end
   end
 
