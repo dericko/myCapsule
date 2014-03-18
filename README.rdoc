@@ -5,6 +5,13 @@ CIS196
 
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
+--------
+HW 7 (Add 3 Validations)
+--------
+Added title uniqueness, body-text-length validation, and timer-greater-than-zero fields.
+
+Fixed heroku raking issue -- thanks Jenny!
+
 
 --------
 HW 6 (Added a gem)
