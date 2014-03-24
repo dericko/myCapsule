@@ -68,7 +68,7 @@ MyCapsule::Application.configure do
   # Mailer configurations using Sendgrid
   config.action_mailer.default_url_options = {host: 'sheltered-crag-2332.herokuapp.com/'}
     config.action_mailer.smtp_settings = {
-      :address    => 'smpt.sendgrid.net',
+      :address    => 'smtp.sendgrid.net',
       :port       => '587',
       :username   => ENV['SENDGRID_USERNAME'],
       :password   => ENV['SENDGRID_PASSWORD'],
