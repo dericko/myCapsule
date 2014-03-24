@@ -10,8 +10,6 @@ HW 8 (Add Heroku add-on)
 --------
 Added mailer using Sendgrid
 
---All Devise-managed mail leads to error on Heroku (works locally)
-
 --------
 HW 7 (Add 3 Validations)
 --------
