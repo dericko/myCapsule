@@ -10,6 +10,8 @@ HW 8 (Add Heroku add-on)
 --------
 Added mailer using Sendgrid
 
+Had problems with Heroku at first, minor mistakes in the config/environments/production.rb file
+
 --------
 HW 7 (Add 3 Validations)
 --------
