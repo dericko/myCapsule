@@ -6,6 +6,11 @@ CIS196
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
 --------
+HW 8 (Add Heroku add-on)
+--------
+Added mailer using Sendgrid
+
+--------
 HW 7 (Add 3 Validations)
 --------
 Added title uniqueness, body-text-length validation, and timer-greater-than-zero fields.

@@ -17,6 +17,7 @@ class NotesController < ApplicationController
       redirect_to root_path
     else
       if @note.save
+        Notifications.new_note(@note).deliver
         redirect_to notes_path
       else
         render 'new'

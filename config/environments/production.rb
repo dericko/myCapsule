@@ -65,6 +65,16 @@ MyCapsule::Application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  # Mailer configurations using Sendgrid
+  config.action_mailer.default_url_options = {host: 'sheltered-crag-2332.herokuapp.com/'}
+    config.action_mailer.smtp_settings = {
+      :address    => 'smpt.sendgrid.net'
+      :port       => '587'
+      :username   => ENV['SENDGRID_USERNAME'],
+      :password   => ENV['SENDGRID_PASSWORD'],
+      :domain     => ENV['SENDGRID_DOMAIN']
+    }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true

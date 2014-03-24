@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record in development
-group :development do gem 'sqlite3' end
+group :development do 
+	gem 'sqlite3'
+	gem 'letter_opener', github: 'ryanb/letter_opener'
+end
 
 # Use postgresql as the database for Active Record in production
 group :production do gem 'pg' end
