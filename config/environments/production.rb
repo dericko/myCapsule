@@ -63,7 +63,7 @@ MyCapsule::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-   config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.raise_delivery_errors = false
 
   # Mailer configurations using Sendgrid
   config.action_mailer.default_url_options = {host: 'sheltered-crag-2332.herokuapp.com/'}
