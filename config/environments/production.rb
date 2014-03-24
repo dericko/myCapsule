@@ -70,7 +70,7 @@ MyCapsule::Application.configure do
     config.action_mailer.smtp_settings = {
       :address    => 'smtp.sendgrid.net',
       :port       => '587',
-      :username   => ENV['SENDGRID_USERNAME'],
+      :user_name   => ENV['SENDGRID_USERNAME'],
       :password   => ENV['SENDGRID_PASSWORD'],
       :domain     => ENV['SENDGRID_DOMAIN']
     }
