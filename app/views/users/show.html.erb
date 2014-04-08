@@ -1,7 +1,27 @@
 <h2>My Profile</h2>
 
 <div>
-	<h2><%= @user.name %></h2>
-	<p><%= @user.email %></p>
-	<p><%= @user.password %></p>
+	<h3>Username: <%= @user.name %></h2>
+	<p>Email: <%= @user.email %></p>
 </div>
+<br>
+
+<% @notes.each do |note| %>
+	<div>
+		<h3><%= link_to note.title, note_path(note.id) %></h3> 
+		<p>Ellapsed: 
+			<%= (Time.now - note.created_at) / (60) %>
+			 min
+		</p>
+		<p>Timer: 
+			<%= note.timer %>
+			 min
+		</p>
+		<% if (note.timer <  ((Time.now - note.created_at) / (60))) %>
+			<p>Message: <%= note.body %></p>
+		<% else %>
+			<p>Message: --hidden-- </p>
+		<% end %>
+		<br>
+	</div> 
+<%end%>

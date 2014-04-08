@@ -19,6 +19,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @note = Note.find(params[:id])
+    # Trying to use variable below to display time left 
+    # minus the amount of time that they entered (eventually
+    # only displaying those notes that have matured)
+    @notes = Note.where({user_id: @user.id}).order(created_at: :asc).limit(3)
   end
 
   def edit

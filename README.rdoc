@@ -6,6 +6,14 @@ CIS196
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
 --------
+HW 9 (Add Queries)
+--------
+Added queries to users_controller to display notes in show, using .where, order, .limit
+
+Added views for minutes ellapsed, remaining (notes/show, users/show)
+
+
+--------
 HW 8 (Add Heroku add-on)
 --------
 Added mailer using Sendgrid

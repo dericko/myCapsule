@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+
   def index
   	@notes = Note.all
   end
@@ -44,6 +45,7 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    @ellapsed = Time.now - @note.created_at
   end
 
   def destroy

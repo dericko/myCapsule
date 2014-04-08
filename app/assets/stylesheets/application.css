@@ -56,6 +56,10 @@ nav section {
 	display: inline;
 }
 
+.dash-review {
+	text-align: center;
+}
+
 .navbar-left {
 	float: left;
 }
