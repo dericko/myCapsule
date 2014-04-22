@@ -6,6 +6,11 @@ CIS196
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
 --------
+HW 10 (Add js/jquery)
+--------
+Added jquery function to homescreen with animate image that toggle-scrolls "hello!" on click. Edited javascript/home.js, stylesheets/home.css.scss, and views/home/index.html.erb for homepage. 'Capman' image is result of pen tool doodling on Pixelmator.
+
+--------
 HW 9 (Add Queries)
 --------
 Added queries to users_controller to display notes in show, using .where, order, .limit
