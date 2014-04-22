@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+// General Styling
+
+body {
+	background-color: #fff;
+	font-family: "Helvetica", sans-serif;
+	height: 100%;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: inline;
+}
+
+li a {
+	text-decoration: none;
+	color: gray;
+	cursor: default;
+}
+
+a:hover {
+	text-decoration: underline;
+	cursor: default;
+}
+
+// Header
+
+
+header {
+	width: 100%;
+}
+
+nav {
+	height: 60px;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+
+nav section {
+	display: inline;
+}
+
+.dash-review {
+	text-align: center;
+}
+
+.navbar-left {
+	float: left;
+}
+
+#title {
+	font-size: 25px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar-left li a:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+.navbar-right {
+	float: right;
+	text-align: right;
+	padding-right: 30px;
+}
+
+nav ul li a {
+	padding-left: 15px;
+}
+
+
+//Footer
+
+footer {
+	position: relative;
+	bottom: 0;
+}
+
+footer section p {
+	height: 20px;
+	width: 100%;
+	color: gray;
+	font-size: 12px;
+	position: relative;
+	bottom: 0;
+}
+.img-container {
+  heights: 300px;
+  width: 100%; }
+
+#home-message {
+  font-family: sans-serif;
+  color: white;
+  font-size: 20px;
+  padding: 2px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: black; }
