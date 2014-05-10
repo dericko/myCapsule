@@ -15,6 +15,7 @@ module MyCapsule
     # Default url for mailer on localhost
     config.action_mailer.default_url_options = {:host => "localhost:3000"}
 
+    config.i18n.default_locale = :sv
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
