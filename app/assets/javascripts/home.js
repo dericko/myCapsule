@@ -1,6 +1,6 @@
 
 
-$(document).ready(function() {
+$(document).on("focus", function() {
 	$('#home-message').hide();
 	$('.img').hover( function() {
 		$(this).fadeTo(300, 0.5, function() {

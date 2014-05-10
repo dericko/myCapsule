@@ -15,3 +15,7 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-datepicker
+
+
+$("text_field.date_picker").datepicker();

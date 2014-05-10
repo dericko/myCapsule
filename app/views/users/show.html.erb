@@ -1,35 +1,40 @@
 <h1 class="page-header">Hello, <%= @user.name %>!</h1>
 
-<p>You have</p>
 
 <h2 class="sub-header">Notes</h2>
-	<% @notes.each do |note| %>
 
 	  <div class="table-static">
 	    <table class="table table-striped">
 	      <thead>
 	        <tr>
 	          <th>Title</th>
-	          <th>Timer</th>
 	          <th>Elapsed</th>
 	          <th>Message</th>
+	          <th><div class="span1"></div></th>
 	        </tr>
 	      </thead>
+	      
+	      <% @notes.each do |note| %>
 	      <tbody>
+
 	        <tr>
-	          <td><%= link_to note.title, note_path(note.id) %></td>
-	          <td><%= note.timer %></td>
-	          <td><%= (Time.now - note.created_at) / (60) %></td>
-	          <td>
-	          	<% if (note.timer <  ((Time.now - note.created_at) / (60))) %>
-								<p><%= note.body %></p>
-							<% else %>
-								<p>--hidden-- </p>
-							<% end %>
-						</td>
+		        <td><%= link_to note.title, note_path(note.id) %></td>
+		        <td><%= (((Time.now - note.created_at) / (60))*100).floor / 100.0 %> min</td>
+		        <td>
+		          	<% if (note.timer <  ((Time.now - note.created_at) / (60))) %>
+						<p><%= note.body %></p>
+					<% else %>
+						<p> --hidden-- </p>
+					<% end %>
+				</td>
+				<% if note.user_id == current_user.id %>
+					<td><%= link_to "<i class='icon-pencil'></i>".html_safe, edit_note_path(note.id) %></td>
+					<td><%= link_to "<i class='icon-trash'></i>".html_safe, note, confirm: "Are you sure?", method: :delete %></td>
+				<% end %>
 	        </tr>
 	      </tbody>
+	      <% end %>
 	    </table>
 	  </div>
-	<% end %>
+	
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyCapsule</title>
+  <title>Capsulo.us</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -12,7 +12,7 @@
 
 <div class="navbar navbar-static-top navbar-inverse">
 	<div class="navbar-inner">
-	    <%= link_to "MyCapsule", root_path, :class =>"brand" %>
+	    <%= link_to "Capsulous", root_path, :class =>"brand" %>
 	 
 	    <ul class="nav">
 	      <li><%= link_to "Browse Notes", notes_path %>	</li>
@@ -29,6 +29,7 @@
 			    </a>
 			    <ul class="dropdown-menu">
 			    	<li><%= link_to "Dashboard", dashboard_path %></li>
+			    	<li><%= link_to "Profile", edit_user_registration_path %></li>
 			    	<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
 			    </ul>
 			<% else %>
@@ -39,13 +40,8 @@
 			<% end %>
 		</ul>
 	</div>
-
 </header>
 
-
-<!-- Notifications and alerts from devise -->
-<p class="notice"> <%= notice %> </p>
-<p class="alert"> <%= alert %> </p>
 
 <center>
 	<%= yield %>

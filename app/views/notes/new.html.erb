@@ -1,50 +1,42 @@
-<h2>New</h2>
+<h2>New Note</h2>
 
-<div class="error-msg">
-	<% if @note.errors.any? %>
-	<ul>
-		<% @note.errors.full_messages.each do |msg| %> 
-		<li><%= msg %></li>
-		<% end %>
-	</ul>
-	<% end %>
-</div>
+<% if @note.errors.any? %>
+	<div class="alert">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		<ul>
+			<% @note.errors.full_messages.each do |msg| %> 
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
 
+
+
+	
 <%= form_for(@note) do |f| %>
 	
 	<div class="field" %>
 		<p>Title</p>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, :placeholder=>"What should we call..."%>
 	</div>
 
 	<div class="field">
 		<p>Message</p>
-		<%= f.text_area :body %>
+		<%= f.text_area :body, :placeholder=>"Dear future self, I know you're busy, but remember what happened today?"%>
 	</div>
 
 	<div class="field">
-		<%= f.hidden_field :user_id, :value => current_user.id %>
+		<%= f.hidden_field :user_id, :value => current_user.id%>
 	</div>
 
-	<!-- Unsure about 'maketime' field for timestamp, should not be manually aded -->
-
 	<div class="field">
-		<p>Timer (in minutes)</p>
-		<%= f.text_field :timer %>
+		<p>Timer (minutes)</p>
+		<%= f.text_field :timer, :placeholder=>"About 10,000/week"%>
 	</div>
 
 	<div class="actions">
-		<%= f.submit %>
-	</div>
-
-	<div class="error-msg">
-	<% if @note.errors.any? %>
-		<ul>
-			<% @note.errors.full_messages.each do |msg| %> 
-			<li><%= msg %></li>
-			<% end %> 
-		</ul>
-	<% end %> 
+		<%= f.submit :class=>"btn"%>
 	</div>
 
 <% end %>

@@ -1,21 +1,43 @@
 <h2>Notes</h2>
 
-<table id="note-table">
-	<tr>
-		<td>Title</td>
-		<td>Body</td>
-		<td>Timer</td>
-		<td><div class="span1"></div></td>
-	</tr>
-	<% @notes.each do |note| %>
-	<tr>
-		<td><%= link_to note.title, note_path(note.id) %></td>
-		<td><%= note.body %></td>
-		<td><%= note.timer %> min </td>
-		<% if note.user_id == current_user.id %>
-			<td><%= link_to "<i class='icon-pencil'></i>".html_safe, edit_note_path(note.id) %></td>
-			<td><%= link_to "<i class='icon-trash'></i>".html_safe, note, confirm: "Are you sure?", method: :delete %></td>
-		<% end %>
-	</tr>
-	<% end %>
-</table>
+
+<div class="row">
+  <div class="span10 offset2">
+  		<div class="table-condensed">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Message</th>
+				<th><div class="span1"></div></th>
+			</tr>	
+		</thead>
+		<% @notes.each do |note| %>
+			<tbody>
+				<% if (note.timer <  ((Time.now - note.created_at) / (60))) %>
+					<tr class="success">
+						<td><%= link_to note.title, note_path(note.id) %></td>
+						<td><%= note.body %></td>							
+						<% if note.user_id == current_user.id %>
+							<td><%= link_to "<i class='icon-trash'></i>".html_safe, note, confirm: "Are you sure?", method: :delete %></td>
+						<% else %>
+							<td></td>
+						<% end %>
+					</tr>				
+				<% else %>
+					<tr class="error">
+						<td><%= link_to note.title, note_path(note.id) %></td>
+						<td class="error"> <%= ((note.timer - (Time.now - note.created_at) / 60)*100).floor / 100.0 %> minutes to go! </td>
+						<% if note.user_id == current_user.id %>
+							<td><%= link_to "<i class='icon-trash'></i>".html_safe, note, confirm: "Are you sure?", method: :delete %></td>
+						<% else %>
+							<td></td>
+						<% end %>
+					</tr>
+				<% end %>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+  </div>
+</div>
