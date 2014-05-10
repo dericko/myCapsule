@@ -5,6 +5,14 @@ CIS196
 
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
+Description:
+"Create a capsule: Ask yourself anything, congratulate yourself on something great, remind yourself to appreciate this moment, tell yourself not to make that mistake again, tell yourself a joke, tell yourself that everything will be okay, inspire yourself. Every day we have the chance to recreate ourselves. Record what you're thinking, what you value, or what you hope for in the future. Set a time or a situation to open it, and submit."
+
+
+Gems used:
+-devise
+-bootstrap
+
 --------
 HW 10 (Add js/jquery)
 --------
@@ -74,7 +82,7 @@ App Summary (from HW2)
 
 A more interactive journal, that uses time to let users interact with themselves. 
 
---> Create a capsule: Ask yourself anything, congratulate yourself on something great, remind yourself to appreciate this moment, tell yourself not to make that mistake again, tell yourself a joke, tell yourself that everything will be okay, inspire yourself. Every day we have the chance to recreate ourselves. Record what you're thinking, what you value, or what you hope for in the future. Set a time or a situation to open it, and submit. You can check your inbox to see your waiting and ready messages. Options to share, to come.
+You can check your inbox to see your waiting and ready messages. Options to share, to come.
 
 
 --------
