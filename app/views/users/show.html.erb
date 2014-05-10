@@ -1,27 +1,35 @@
-<h2>My Profile</h2>
+<h1 class="page-header">Hello, <%= @user.name %>!</h1>
 
-<div>
-	<h3>Username: <%= @user.name %></h2>
-	<p>Email: <%= @user.email %></p>
-</div>
-<br>
+<p>You have</p>
 
-<% @notes.each do |note| %>
-	<div>
-		<h3><%= link_to note.title, note_path(note.id) %></h3> 
-		<p>Ellapsed: 
-			<%= (Time.now - note.created_at) / (60) %>
-			 min
-		</p>
-		<p>Timer: 
-			<%= note.timer %>
-			 min
-		</p>
-		<% if (note.timer <  ((Time.now - note.created_at) / (60))) %>
-			<p>Message: <%= note.body %></p>
-		<% else %>
-			<p>Message: --hidden-- </p>
-		<% end %>
-		<br>
-	</div> 
-<%end%>
+<h2 class="sub-header">Notes</h2>
+	<% @notes.each do |note| %>
+
+	  <div class="table-static">
+	    <table class="table table-striped">
+	      <thead>
+	        <tr>
+	          <th>Title</th>
+	          <th>Timer</th>
+	          <th>Elapsed</th>
+	          <th>Message</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr>
+	          <td><%= link_to note.title, note_path(note.id) %></td>
+	          <td><%= note.timer %></td>
+	          <td><%= (Time.now - note.created_at) / (60) %></td>
+	          <td>
+	          	<% if (note.timer <  ((Time.now - note.created_at) / (60))) %>
+								<p><%= note.body %></p>
+							<% else %>
+								<p>--hidden-- </p>
+							<% end %>
+						</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	  </div>
+	<% end %>
+

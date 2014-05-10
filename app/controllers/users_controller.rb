@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(user_params)
+    @user = User.new(user_params)
   	if @user.save
   		redirect_to users_path
   	else
@@ -18,12 +18,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @note = Note.find(params[:id])
-    # Trying to use variable below to display time left 
-    # minus the amount of time that they entered (eventually
-    # only displaying those notes that have matured)
-    @notes = Note.where({user_id: @user.id}).order(created_at: :asc).limit(3)
+    if user_signed_in?
+      @user = current_user
+      @notes = Note.where({user_id: @user.id}).order(created_at: :asc).limit(3)
+    else  
+      redirect_to users_path
+    end
   end
 
   def edit
@@ -44,9 +44,6 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
-
-# private methods
-  private
 
   def user_params
   	params.require(:user).permit(:name, :email, :password)
