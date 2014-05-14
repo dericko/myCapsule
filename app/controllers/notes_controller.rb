@@ -1,7 +1,11 @@
 class NotesController < ApplicationController
 
   def index
-  	@notes = Note.all
+    if user_signed_in?
+      @notes = Note.all
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def new
