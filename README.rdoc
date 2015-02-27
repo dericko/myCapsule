@@ -1,7 +1,6 @@
 == README
 
 Derick Olson
-CIS196
 
 Heroku: http://sheltered-crag-2332.herokuapp.com/
 
@@ -14,60 +13,14 @@ Gems used:
 -bootstrap
 
 --------
-HW 10 (Add js/jquery)
---------
-Added jquery function to homescreen with animate image that toggle-scrolls "hello!" on click. Edited javascript/home.js, stylesheets/home.css.scss, and views/home/index.html.erb for homepage. 'Capman' image is result of pen tool doodling on Pixelmator.
-
---------
-HW 9 (Add Queries)
---------
-Added queries to users_controller to display notes in show, using .where, order, .limit
-
-Added views for minutes ellapsed, remaining (notes/show, users/show)
-
-
---------
-HW 8 (Add Heroku add-on)
---------
-Added mailer using Sendgrid
-
-Had problems with Heroku at first, minor mistakes in the config/environments/production.rb file
-
---------
-HW 7 (Add 3 Validations)
---------
-Added title uniqueness, body-text-length validation, and timer-greater-than-zero fields.
-
-Fixed heroku raking issue -- thanks Jenny!
-
-
---------
-HW 6 (Added a gem)
---------
-Added gem Devise to app
-
-Problems:
-I've spent several hours unsuccsessfully troubleshooting an error with 'heroku rake db:migrate' (see below). I think it has to do with email already existing in my User model, and devise tryng to add another. The fix from the tutorial worked locally (totally functional on localhost), but I can't figure it out for Heroku. As a result, log-in pages do not work on Heroku. I'll try to come to office hours this week to try and fix the problem.
-
-ERROR MESSAGE (on $heroku run rake db:migrate):
-"
-rake aborted!
-An error has occurred, this and all later migrations canceled:
-
-PG::UniqueViolation: ERROR:  could not create unique index "index_users_on_email"
-DETAIL:  Key (email)=() is duplicated.
-: CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")/app/vendor/bundle/ruby/2.0.0/gems/activerecord-4.0.2/lib/active_record/connection_adapters/postgresql/database_statements.rb:128:in `async_exec'
-"
-
---------
-HW 5 (Added show/edit/delete to user pages)
+Added show/edit/delete to user pages
 --------
 Note list now displays the user's name (not ID). Added functionality to User and Note models. View, edit, delete all seem to work fine for both.
 
 *Issue on heroku--delete just links to the show page. On 'rails server' it deletes just fine. 
 
 --------
-HW 4 (Created databases for User and Note, with add and index)
+Created databases for User and Note, with add and index
 --------
 Had problem with displaying username in Note#index (this is the linked data type). Other than that, everything seems to work. Plan to get some styling done this week.
 
@@ -75,39 +28,14 @@ I have one field in the Note database, "timer" that I want to hold a number (thi
 
 
 --------
-App Summary (from HW2)
+App Summary
 --------
 
 1) MyCapsule
 
 A more interactive journal, that uses time to let users interact with themselves. 
 
-You can check your inbox to see your waiting and ready messages. Options to share, to come.
-
-
---------
-To add later on:
---------
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can check your inbox to see your waiting and ready messages.
 
 
 Please feel free to use a different markup language if you do not plan to run
